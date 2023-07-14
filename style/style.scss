@@ -1,0 +1,38 @@
+/* Variables */
+$font-title: 'Charm', handwriting;
+$font-subtitle: 'MonteCarlo', handwriting;
+$font-text: 'Berkshire Swash', handwriting;
+$font-special: 'Fondamento', handwriting;
+
+$color-primary: #F8EBDD;
+$color-secondary: #EAC7C7;
+$color-tertiary: #F8CBA6;
+$color-shadow: #0D1321;
+$color-gradient: linear-gradient(90deg, rgba(248,235,221,1) 0%, rgba(234,199,199,1) 50%, rgba(248,203,166,1) 100%);
+
+$svg-width: 40vw;
+$svg-height: 25vh;
+$size-home-title: 8.75vw;
+$size-chapter-title: 10.25vw;
+$size-chapter-title-span: $size-chapter-title * 1.2;
+$size-current-chapter-button: 5vw;
+$size-other-chapter-button: 3.5vw;
+$size-storyline: 5.75vw;
+
+/* Import */
+@import 'mixins/mixins';
+@import 'mixins/breakpoints';
+@import 'animations/keyframes';
+
+/* CSS */
+body {
+    width: 100vw;
+    height: 100svh;
+    background: #000;
+    overflow: hidden;
+    touch-action: none;
+}
+
+/* Pages */
+@import 'pages/home';
+@import 'pages/chapters';

@@ -1,0 +1,86 @@
+.homepage {
+    @include display-flex-center(100vw, 100svh);
+}
+
+#video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#front-cover {
+    width: 90%;
+    height: 40%;
+
+    .book-opening {
+        @include display-flex-center(100%, 75%);
+
+        .story-title {
+            text-align: center;
+            font-size: $size-home-title;
+            font-family: $font-title;
+            color: $color-primary;
+            text-shadow: 1rem 1rem 2rem $color-shadow;
+            cursor: pointer;
+
+            @include break(1024px) {
+                font-size: $size-home-title * 0.9;
+            }
+            @include break(1280px) {
+                font-size: $size-home-title * 0.85;
+            }
+            @include break(1440px) {
+                font-size: $size-home-title * 0.8;
+            }
+            @include break(1920px) {
+                font-size: $size-home-title * 0.75;
+            }
+        }
+    }
+
+    .signature-container {
+        width: $svg-width;
+        height: $svg-height;
+        position: absolute;
+        right: 10%;
+        bottom: 0;
+
+        @include break(600px) {
+            width: $svg-width * 0.9;
+            height: $svg-height * 0.9;
+        }
+        @include break(768px) {
+            width: $svg-width * 0.8;
+            height: $svg-height * 0.8;
+        }
+        @include break(1024px) {
+            width: $svg-width * 0.75;
+            height: $svg-height * 0.75;
+        }
+        @include break(1280px) {
+            width: $svg-width * 0.7;
+            height: $svg-height * 0.7;
+        }
+        @include break(1440px) {
+            width: $svg-width * 0.65;
+            height: $svg-height * 0.65;
+        }
+        @include break(1920px) {
+            width: $svg-width * 0.6;
+            height: $svg-height * 0.6;
+        }
+
+        #signing {
+            stroke-dasharray: 1722px;
+            stroke-dashoffset: 1722px;
+            stroke: darken($color-primary, 10%);
+            animation: signing 6s 6s forwards;
+        }
+    }
+}

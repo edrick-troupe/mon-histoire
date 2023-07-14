@@ -1,0 +1,316 @@
+.chapters {
+    width: 100vw;
+    height: 100svh;
+    justify-content: center;
+    flex-direction: column;
+
+    .chapter {
+        min-width: 100vw;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: row;
+        opacity: 0;
+    }
+}
+
+// Positionnement de l'overlay sur l'image de couverture de chaque chapitre
+.intro {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba($color: #000000, $alpha: 0.75);
+        z-index: -1;
+    }
+}
+// Image de couverture pour chaque chapitre
+@for $i from 1 through 4 {
+    
+    .chapter-#{$i} {
+        .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100svh;
+            background-image: url('../media/cover/background_#{$i}.jpg');
+            background-size: cover;
+            background-position: center center;
+            z-index: -2;        
+        }
+    }
+}
+
+.chapter-title-container {
+    @include display-flex-center(80vw, 40vh);
+    margin: auto;
+    padding-top: 1%;
+
+    .chapter-title {
+        text-align: center;
+        font-size: $size-chapter-title;
+        font-family: $font-subtitle;
+        color: $color-primary;
+        text-shadow: 4px 4px 2px $color-shadow, 0.5px 0.5px 0.5px $color-secondary;
+
+        @include break(1024px) {
+            font-size: $size-chapter-title * 0.9;
+        }
+        @include break(1280px) {
+            font-size: $size-chapter-title * 0.8;
+        }
+        @include break(1440px) {
+            font-size: $size-chapter-title * 0.7;
+        }
+        @include break(1920px) {
+            font-size: $size-chapter-title * 0.6;
+        }
+    }
+    span {
+        display: block;
+        margin-bottom: 1vh;
+        font-size: $size-chapter-title-span;
+
+        @include break(1024px) {
+            font-size: $size-chapter-title-span * 0.9;
+        }
+        @include break(1280px) {
+            font-size: $size-chapter-title-span * 0.8;
+        }
+        @include break(1440px) {
+            font-size: $size-chapter-title-span * 0.7;
+        }
+        @include break(1920px) {
+            font-size: $size-chapter-title-span * 0.7;
+        }
+    }
+}
+
+.start-reading {
+    @include display-flex-center(100vw, 60vh);
+    position: relative;
+
+    .current-chapter {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1.5% 2.5%;
+        font-size: $size-current-chapter-button;
+        font-family: $font-special;
+        color: $color-tertiary;
+        border-radius: 10px;
+        background-color: (rgba($color-tertiary, $alpha: 0.15));
+        box-shadow: $color-shadow 5px 5px;
+        cursor: pointer;
+
+        &:hover {
+            color: $color-primary;
+            border: 2px solid $color-tertiary;
+            background-color: transparent;
+        }
+
+        &:active {
+            top: 40.5%;
+            left: 50.25%;
+            box-shadow: $color-shadow 2.5px 2.5px 0 0;
+        }
+
+        @include break(600px) {
+            font-size: $size-current-chapter-button * 0.9;
+        }
+        @include break(768px) {
+            font-size: $size-current-chapter-button * 0.8;
+        }
+        @include break(1024px) {
+            font-size: $size-current-chapter-button * 0.7;
+        }
+        @include break(1280px) {
+            font-size: $size-current-chapter-button * 0.55;
+        }
+        @include break(1440px) {
+            font-size: $size-current-chapter-button * 0.45;
+        }
+        @include break(1920px) {
+            font-size: $size-current-chapter-button * 0.4;
+        }
+    }
+}
+
+// Boutons de navigation entre chapitres
+.other-chapter {
+    position: absolute;
+    bottom: 10%;
+    font-size: $size-other-chapter-button;
+    font-family: $font-special;
+    color: $color-secondary;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    @include break(1024px) {
+        font-size: $size-other-chapter-button * 0.8;   
+    }
+    @include break(1280px) {
+        font-size: $size-other-chapter-button * 0.7;   
+    }
+    @include break(1440px) {
+        font-size: $size-other-chapter-button * 0.65;   
+    }
+    @include break(1920px) {
+        font-size: $size-other-chapter-button * 0.55;   
+    }
+}
+.previous-chapter {
+    left: 7.5%
+}
+.next-chapter {
+    right: 7.5%
+}
+
+// Dernier chapitre
+.chapter:last-child {
+
+    .last-message-container {
+        @include display-flex-center(80vw, 20vh);
+        margin: auto;
+    
+        .last-message {
+            text-align: center;
+            font-size: $size-current-chapter-button;
+            font-family: $font-special;
+            color: $color-primary;
+
+            @include break(1024px) {
+                font-size: $size-current-chapter-button * 0.8;   
+            }
+            @include break(1280px) {
+                font-size: $size-current-chapter-button * 0.6;
+            }
+            @include break(1440px) {
+                font-size: $size-current-chapter-button * 0.55;
+            }
+            @include break(1920px) {
+                font-size: $size-current-chapter-button * 0.5;
+            }
+        }
+    }
+    .previous-chapter {
+        bottom: -45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: $size-other-chapter-button * 1.2;
+
+        @include break(1024px) {
+            font-size: $size-other-chapter-button * 0.9;   
+        }
+        @include break(1280px) {
+            font-size: $size-other-chapter-button * 0.8;   
+        }
+        @include break(1440px) {
+            font-size: $size-other-chapter-button * 0.75;   
+        }
+        @include break(1920px) {
+            font-size: $size-other-chapter-button * 0.7;   
+        }
+    }
+}
+
+// Pages 
+.page {
+    @include display-flex-center(100vw, 100svh);
+    min-width: 100vw;
+
+    .sheet {
+        width: 80%;
+        height: 90%;
+        position: relative;
+        color: $color-secondary;
+        border: 1px solid $color-tertiary;
+
+        .storyline {
+            padding: 7vh 5vw;
+            font-size: $size-storyline;
+            font-family: $font-text;
+            line-height: 125%;
+            color: $color-primary;
+
+            @include break(768px) {
+                font-size: $size-storyline * 0.9;   
+            }
+            @include break(1024px) {
+                font-size: $size-storyline * 0.8;   
+            }
+            @include break(1280px) {
+                font-size: $size-storyline * 0.6;
+            }
+            @include break(1440px) {
+                font-size: $size-storyline * 0.55;
+            }
+            @include break(1920px) {
+                font-size: $size-storyline * 0.5;
+            }
+
+            .char {
+                opacity: 0;
+                transition: all 1s ease;
+            }
+            .fade-in {
+                opacity: 1;
+            }
+        }
+
+        .reading-btn {
+            display: inline-block;
+            position: absolute;
+            bottom: 5%;
+            font-size: $size-storyline;
+            transition: 1s;
+            cursor: pointer;
+
+            &:hover {
+                color: lighten($color-primary, 2.5%);
+            }
+
+            @include break(768px) {
+                font-size: $size-storyline * 0.95;   
+            }
+            @include break(1024px) {
+                font-size: $size-storyline * 0.85;   
+            }
+            @include break(1280px) {
+                font-size: $size-storyline * 0.65;
+            }
+            @include break(1440px) {
+                font-size: $size-storyline * 0.6;
+            }
+            @include break(1920px) {
+                font-size: $size-storyline * 0.55;
+            }
+
+        }
+
+        .previous-page {
+            left: 5%;
+        }
+        .previous-chapter {
+            @extend .previous-page
+        }
+
+        .next-page {
+            right: 5%;
+        }
+        .next-chapter {
+            @extend .next-page
+        }
+
+        .flash {
+            animation: flash linear 2s infinite;
+        }
+    }
+}

@@ -1,0 +1,540 @@
+/* Variables */
+/* Import */
+@keyframes signing {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* CSS */
+body {
+  width: 100vw;
+  height: 100svh;
+  background: #000;
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* Pages */
+.homepage {
+  width: 100vw;
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#video {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#front-cover {
+  width: 90%;
+  height: 40%;
+}
+#front-cover .book-opening {
+  width: 100%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#front-cover .book-opening .story-title {
+  text-align: center;
+  font-size: 8.75vw;
+  font-family: "Charm", handwriting;
+  color: #F8EBDD;
+  text-shadow: 1rem 1rem 2rem #0D1321;
+  cursor: pointer;
+}
+@media screen and (min-width: 1024px) {
+  #front-cover .book-opening .story-title {
+    font-size: 7.875vw;
+  }
+}
+@media screen and (min-width: 1280px) {
+  #front-cover .book-opening .story-title {
+    font-size: 7.4375vw;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #front-cover .book-opening .story-title {
+    font-size: 7vw;
+  }
+}
+@media screen and (min-width: 1920px) {
+  #front-cover .book-opening .story-title {
+    font-size: 6.5625vw;
+  }
+}
+#front-cover .signature-container {
+  width: 40vw;
+  height: 25vh;
+  position: absolute;
+  right: 10%;
+  bottom: 0;
+}
+@media screen and (min-width: 600px) {
+  #front-cover .signature-container {
+    width: 36vw;
+    height: 22.5vh;
+  }
+}
+@media screen and (min-width: 768px) {
+  #front-cover .signature-container {
+    width: 32vw;
+    height: 20vh;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #front-cover .signature-container {
+    width: 30vw;
+    height: 18.75vh;
+  }
+}
+@media screen and (min-width: 1280px) {
+  #front-cover .signature-container {
+    width: 28vw;
+    height: 17.5vh;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #front-cover .signature-container {
+    width: 26vw;
+    height: 16.25vh;
+  }
+}
+@media screen and (min-width: 1920px) {
+  #front-cover .signature-container {
+    width: 24vw;
+    height: 15vh;
+  }
+}
+#front-cover .signature-container #signing {
+  stroke-dasharray: 1722px;
+  stroke-dashoffset: 1722px;
+  stroke: #efd2b3;
+  animation: signing 6s 6s forwards;
+}
+
+.chapters {
+  width: 100vw;
+  height: 100svh;
+  justify-content: center;
+  flex-direction: column;
+}
+.chapters .chapter {
+  min-width: 100vw;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: row;
+  opacity: 0;
+}
+
+.intro {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.intro .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: -1;
+}
+
+.chapter-1 .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  background-image: url("../media/cover/background_1.jpg");
+  background-size: cover;
+  background-position: center center;
+  z-index: -2;
+}
+
+.chapter-2 .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  background-image: url("../media/cover/background_2.jpg");
+  background-size: cover;
+  background-position: center center;
+  z-index: -2;
+}
+
+.chapter-3 .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  background-image: url("../media/cover/background_3.jpg");
+  background-size: cover;
+  background-position: center center;
+  z-index: -2;
+}
+
+.chapter-4 .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  background-image: url("../media/cover/background_4.jpg");
+  background-size: cover;
+  background-position: center center;
+  z-index: -2;
+}
+
+.chapter-title-container {
+  width: 80vw;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding-top: 1%;
+}
+.chapter-title-container .chapter-title {
+  text-align: center;
+  font-size: 10.25vw;
+  font-family: "MonteCarlo", handwriting;
+  color: #F8EBDD;
+  text-shadow: 4px 4px 2px #0D1321, 0.5px 0.5px 0.5px #EAC7C7;
+}
+@media screen and (min-width: 1024px) {
+  .chapter-title-container .chapter-title {
+    font-size: 9.225vw;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .chapter-title-container .chapter-title {
+    font-size: 8.2vw;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .chapter-title-container .chapter-title {
+    font-size: 7.175vw;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .chapter-title-container .chapter-title {
+    font-size: 6.15vw;
+  }
+}
+.chapter-title-container span {
+  display: block;
+  margin-bottom: 1vh;
+  font-size: 12.3vw;
+}
+@media screen and (min-width: 1024px) {
+  .chapter-title-container span {
+    font-size: 11.07vw;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .chapter-title-container span {
+    font-size: 9.84vw;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .chapter-title-container span {
+    font-size: 8.61vw;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .chapter-title-container span {
+    font-size: 8.61vw;
+  }
+}
+
+.start-reading {
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.start-reading .current-chapter {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.5% 2.5%;
+  font-size: 5vw;
+  font-family: "Fondamento", handwriting;
+  color: #F8CBA6;
+  border-radius: 10px;
+  background-color: rgba(248, 203, 166, 0.15);
+  box-shadow: #0D1321 5px 5px;
+  cursor: pointer;
+}
+.start-reading .current-chapter:hover {
+  color: #F8EBDD;
+  border: 2px solid #F8CBA6;
+  background-color: transparent;
+}
+.start-reading .current-chapter:active {
+  top: 40.5%;
+  left: 50.25%;
+  box-shadow: #0D1321 2.5px 2.5px 0 0;
+}
+@media screen and (min-width: 600px) {
+  .start-reading .current-chapter {
+    font-size: 4.5vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .start-reading .current-chapter {
+    font-size: 4vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .start-reading .current-chapter {
+    font-size: 3.5vw;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .start-reading .current-chapter {
+    font-size: 2.75vw;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .start-reading .current-chapter {
+    font-size: 2.25vw;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .start-reading .current-chapter {
+    font-size: 2vw;
+  }
+}
+
+.other-chapter {
+  position: absolute;
+  bottom: 10%;
+  font-size: 3.5vw;
+  font-family: "Fondamento", handwriting;
+  color: #EAC7C7;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+@media screen and (min-width: 1024px) {
+  .other-chapter {
+    font-size: 2.8vw;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .other-chapter {
+    font-size: 2.45vw;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .other-chapter {
+    font-size: 2.275vw;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .other-chapter {
+    font-size: 1.925vw;
+  }
+}
+
+.previous-chapter {
+  left: 7.5%;
+}
+
+.next-chapter {
+  right: 7.5%;
+}
+
+.chapter:last-child .last-message-container {
+  width: 80vw;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.chapter:last-child .last-message-container .last-message {
+  text-align: center;
+  font-size: 5vw;
+  font-family: "Fondamento", handwriting;
+  color: #F8EBDD;
+}
+@media screen and (min-width: 1024px) {
+  .chapter:last-child .last-message-container .last-message {
+    font-size: 4vw;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .chapter:last-child .last-message-container .last-message {
+    font-size: 3vw;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .chapter:last-child .last-message-container .last-message {
+    font-size: 2.75vw;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .chapter:last-child .last-message-container .last-message {
+    font-size: 2.5vw;
+  }
+}
+.chapter:last-child .previous-chapter {
+  bottom: -45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4.2vw;
+}
+@media screen and (min-width: 1024px) {
+  .chapter:last-child .previous-chapter {
+    font-size: 3.15vw;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .chapter:last-child .previous-chapter {
+    font-size: 2.8vw;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .chapter:last-child .previous-chapter {
+    font-size: 2.625vw;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .chapter:last-child .previous-chapter {
+    font-size: 2.45vw;
+  }
+}
+
+.page {
+  width: 100vw;
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+}
+.page .sheet {
+  width: 80%;
+  height: 90%;
+  position: relative;
+  color: #EAC7C7;
+  border: 1px solid #F8CBA6;
+}
+.page .sheet .storyline {
+  padding: 7vh 5vw;
+  font-size: 5.75vw;
+  font-family: "Berkshire Swash", handwriting;
+  line-height: 125%;
+  color: #F8EBDD;
+}
+@media screen and (min-width: 768px) {
+  .page .sheet .storyline {
+    font-size: 5.175vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .page .sheet .storyline {
+    font-size: 4.6vw;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .page .sheet .storyline {
+    font-size: 3.45vw;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .page .sheet .storyline {
+    font-size: 3.1625vw;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .page .sheet .storyline {
+    font-size: 2.875vw;
+  }
+}
+.page .sheet .storyline .char {
+  opacity: 0;
+  transition: all 1s ease;
+}
+.page .sheet .storyline .fade-in {
+  opacity: 1;
+}
+.page .sheet .reading-btn {
+  display: inline-block;
+  position: absolute;
+  bottom: 5%;
+  font-size: 5.75vw;
+  transition: 1s;
+  cursor: pointer;
+}
+.page .sheet .reading-btn:hover {
+  color: #faf1e8;
+}
+@media screen and (min-width: 768px) {
+  .page .sheet .reading-btn {
+    font-size: 5.4625vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .page .sheet .reading-btn {
+    font-size: 4.8875vw;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .page .sheet .reading-btn {
+    font-size: 3.7375vw;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .page .sheet .reading-btn {
+    font-size: 3.45vw;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .page .sheet .reading-btn {
+    font-size: 3.1625vw;
+  }
+}
+.page .sheet .previous-page, .page .sheet .previous-chapter {
+  left: 5%;
+}
+.page .sheet .next-page, .page .sheet .next-chapter {
+  right: 5%;
+}
+.page .sheet .flash {
+  animation: flash linear 2s infinite;
+}
+
+/*# sourceMappingURL=style.css.map */
